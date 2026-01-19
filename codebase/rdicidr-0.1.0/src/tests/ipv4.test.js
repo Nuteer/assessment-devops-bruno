@@ -54,6 +54,3 @@ test("usable avaiable address count (AWS) is calculated correctly", () => {
   expect(ipv4.availableCount(5)).toBe(4091);
 });
 
-test("force CI failure", () => {
-  expect(true).toBe(false);
-});

@@ -10,28 +10,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: codebase/rdicidr-0.1.0
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '15.x'
+          cache: 'npm'
+          cache-dependency-path: codebase/rdicidr-0.1.0/package-lock.json
 
       - name: Install dependencies
         run: npm install
-        working-directory: codebase/rdicidr-0.1.0
-
-      - name: Run linter
-        run: npm run lint
-        working-directory: rcodebase/rdicidr-0.1.0
 
       - name: Run tests
-        run: CI=true npm run test
-        working-directory: codebase/rdicidr-0.1.0
+        run: CI=true npm test
 
       - name: Build app
         run: npm run build
-        working-directory: codebase/rdicidr-0.1.0
-

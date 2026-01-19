@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
@@ -25,13 +25,12 @@ jobs:
 
       - name: Run linter
         run: npm run lint
-        working-directory: rcodebase/rdicidr-0.1.0
+        working-directory: codebase/rdicidr-0.1.0
 
       - name: Run tests
-        run: CI=true npm run test
+        run: CI=true npm test
         working-directory: codebase/rdicidr-0.1.0
 
       - name: Build app
         run: npm run build
         working-directory: codebase/rdicidr-0.1.0
-

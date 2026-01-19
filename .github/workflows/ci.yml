@@ -21,17 +21,17 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: rdicidr-0.1.0
+        working-directory: codebase/rdicidr-0.1.0
 
       - name: Run linter
         run: npm run lint
-        working-directory: rdicidr-0.1.0
+        working-directory: rcodebase/rdicidr-0.1.0
 
       - name: Run tests
         run: CI=true npm run test
-        working-directory: rdicidr-0.1.0
+        working-directory: codebase/rdicidr-0.1.0
 
       - name: Build app
         run: npm run build
-        working-directory: rdicidr-0.1.0
+        working-directory: codebase/rdicidr-0.1.0
 
